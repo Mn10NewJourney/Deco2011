@@ -1,0 +1,112 @@
+#Deco2011
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Decos
+<Function AddDeco4>
+#Parameters
+#1. Side Texture
+#2. Top Texture
+#3. Direction
+#4. Show main side
+#5. Show back side
+#6. Mesh
+#7. Thickness
+#8. Length of side decos
+#9. Center X
+#10. Center Z
+#11. Door Width
+#12. Door Height
+#13. Side Deco Height
+#14. Top Deco Height
+#15. Offset
+#16. Filler Walls
+#17. Filler Walls Texture
+#18. Filler Walls Depth
+
+Set 40 = %param1% #Side Texture
+Set 41 = %param2% #Top Texture
+Set 42 = %param3% #Direction
+Set 43 = %param7% #Thickness
+Set 44 = %param8% #Length of side decos
+Set 45 = %param9% #Center X
+Set 46 = %param10% #Center Z
+Set 47 = %param11% #Door Width
+Set 48 = %param12% #Door Height
+Set 49 = %param13% #Side Deco Height
+Set 50 = %param14% #Top Deco Height
+Set 51 = %param15% #Offset
+Set 52 = %param6% #Mesh
+Set 61 = %param18% #Depth of the filler walls
+Set 62 = (%param18% + %param7%) / 2 #Distance between trims for CenterX and CenterZ trims
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Front Facing Decos (Main Side)
+if[(%param3% = front | %param3% = Front) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoTop, %41%, %45%, %46% - (%43% / 2), %47%, %43%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[(%param3% = front | %param3% = Front) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoLeft, %40%, %45% - (%47% / 2) - (%44% / 2), %46% - (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+if[(%param3% = front | %param3% = Front) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoRight, %40%, %45% + (%47% / 2) + (%44% / 2), %46% - (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+
+#Front Facing Decos (Back Side)
+if[(%param3% = front | %param3% = Front) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoTop, %41%, %45%, %46% + %61% + (%43% / 2), %47%, %43%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[(%param3% = front | %param3% = Front) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoLeft, %40%, %45% - (%47% / 2) - (%44% / 2), %46% + %61% + (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+if[(%param3% = front | %param3% = Front) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoRight, %40%, %45% + (%47% / 2) + (%44% / 2), %46% + %61% + (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Back Facing Decos (Main Side)
+if[(%param3% = back | %param3% = Back) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoTop, %41%, %45%, %46% + (%43% / 2), %47%, %43%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[(%param3% = back | %param3% = Back) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoLeft, %40%, %45% - (%47% / 2) - (%44% / 2), %46% + (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+if[(%param3% = back | %param3% = Back) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoRight, %40%, %45% + (%47% / 2) + (%44% / 2), %46% + (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+
+#Back Facing Decos (Back Side)
+if[(%param3% = back | %param3% = Back) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoTop, %41%, %45%, %46% - %61% - (%43% / 2), %47%, %43%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[(%param3% = back | %param3% = Back) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoLeft, %40%, %45% - (%47% / 2) - (%44% / 2), %46% - %61% - (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+if[(%param3% = back | %param3% = Back) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoRight, %40%, %45% + (%47% / 2) + (%44% / 2), %46% - %61% - (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Left Facing Decos (Main Side)
+if[(%param3% = left | %param3% = Left) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoTop, %41%, %45% - (%43% / 2), %46%, %43%, %47%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[(%param3% = left | %param3% = Left) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoLeft, %40%, %45% - (%43% / 2), %46% - (%47% / 2) - (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+if[(%param3% = left | %param3% = Left) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoRight, %40%, %45% - (%43% / 2), %46% + (%47% / 2) + (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+
+#Left Facing Decos (Back Side)
+if[(%param3% = left | %param3% = Left) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoTop, %41%, %45% + %61% + (%43% / 2), %46%, %43%, %47%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[(%param3% = left | %param3% = Left) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoLeft, %40%, %45% + %61% + (%43% / 2), %46% - (%47% / 2) - (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+if[(%param3% = left | %param3% = Left) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoRight, %40%, %45% + %61% + (%43% / 2), %46% + (%47% / 2) + (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Right Facing Decos (Main Side)
+if[(%param3% = right | %param3% = Right) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoTop, %41%, %45% + (%43% / 2), %46%, %43%, %47%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[(%param3% = right | %param3% = Right) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoLeft, %40%, %45% + (%43% / 2), %46% - (%47% / 2) - (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+if[(%param3% = right | %param3% = Right) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoRight, %40%, %45% + (%43% / 2), %46% + (%47% / 2) + (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+
+#Right Facing Decos (Back Side)
+if[(%param3% = right | %param3% = Right) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoTop, %41%, %45% - %61% - (%43% / 2), %46%, %43%, %47%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[(%param3% = right | %param3% = Right) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoLeft, %40%, %45% - %61% - (%43% / 2), %46% - (%47% / 2) - (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+if[(%param3% = right | %param3% = Right) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoRight, %40%, %45% - %61% - (%43% / 2), %46% + (%47% / 2) + (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Center X (Main Side)
+if[(%param3% = centerx | %param3% = CenterX) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoTop, %41%, %45% - %62%, %46%, %43%, %47%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[(%param3% = centerx | %param3% = CenterX) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoLeft, %40%, %45% - %62%, %46% - (%47% / 2) - (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+if[(%param3% = centerx | %param3% = CenterX) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoRight, %40%, %45% - %62%, %46% + (%47% / 2) + (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+
+#Center X (Back Side)
+if[(%param3% = centerx | %param3% = CenterX) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoTop, %41%, %45% + %62%, %46%, %43%, %47%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[(%param3% = centerx | %param3% = CenterX) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoLeft, %40%, %45% + %62%, %46% - (%47% / 2) - (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+if[(%param3% = centerx | %param3% = CenterX) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoRight, %40%, %45% + %62%, %46% + (%47% / 2) + (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Center Z (Main Side)
+if[(%param3% = centerz | %param3% = CenterZ) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoTop, %41%, %45%, %46% - %62%, %47%, %43%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[(%param3% = centerz | %param3% = CenterZ) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoLeft, %40%, %45% - (%47% / 2) - (%44% / 2), %46% - %62%, %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+if[(%param3% = centerz | %param3% = CenterZ) & (%param4% = true | %param4% = True)] CreateWallBox2 %52%, MainDecoRight, %40%, %45% + (%47% / 2) + (%44% / 2), %46% - %62%, %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+
+#Center Z (Back Side)
+if[(%param3% = centerz | %param3% = CenterZ) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoTop, %41%, %45%, %46% + %62%, %47%, %43%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[(%param3% = centerz | %param3% = CenterZ) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoLeft, %40%, %45% - (%47% / 2) - (%44% / 2), %46% + %62%, %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+if[(%param3% = centerz | %param3% = CenterZ) & (%param5% = true | %param5% = True)] CreateWallBox2 %52%, BackDecoRight, %40%, %45% + (%47% / 2) + (%44% / 2), %46% + %62%, %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Filler Walls
+if[%param3% = left | %param3% = Left | %param3% = right | %param3% = Right | %param3% = centerx | %param3% = CenterX] Set 53 = false #Direction of the filler walls
+if[%param3% = front | %param3% = Front | %param3% = back | %param3% = Back | %param3% = centerz | %param3% = CenterZ] Set 53 = true #Direction of the filler walls
+if[%param3% = left | %param3% = Left | %param3% = front | %param3% = Front] Set 54 = Left #Wall Orientation of the filler walls
+if[%param3% = right | %param3% = Right | %param3% = back | %param3% = Back] Set 54 = Right #Wall Orientation of the filler walls
+if[%param3% = centerx | %param3% = CenterX | %param3% = centerz | %param3% = CenterZ] Set 54 = Center #Wall Orientation of the filler walls
+Set 55 = %param17% #Texture of the filler walls
+Set 56 = %param18% #Depth of the filler walls
+
+if[%param16% = true | %param16% = True] WallOrientation = %54%
+if[%param16% = true | %param16% = True] AddFillerWalls %55%, %56%, %45%, %46%, %47%, %48%, %51%, %53%, 0, 0
+<EndFunction>

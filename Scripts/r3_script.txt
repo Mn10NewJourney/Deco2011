@@ -1,0 +1,49 @@
+#Deco2011
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Decos
+<Function AddDeco3>
+Set 40 = %param1% #Side Texture
+Set 41 = %param2% #Top Texture
+Set 42 = %param3% #Direction
+Set 43 = %param4% #Thickness
+Set 44 = %param5% #Length of side decos
+Set 45 = %param6% #Center X
+Set 46 = %param7% #Center Z
+Set 47 = %param8% #Door Width
+Set 48 = %param9% #Door Height
+Set 49 = %param10% #Side Deco Height
+Set 50 = %param11% #Top Deco Height
+Set 51 = %param12% #Offset
+Set 52 = %param16% #Mesh
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Front Facing Decos
+if[%param3% = front | %param3% = Front] CreateWallBox2 %52%, DecoTop, %41%, %45%, %46% - (%43% / 2), %47%, %43%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[%param3% = front | %param3% = Front] CreateWallBox2 %52%, DecoLeft, %40%, %45% - (%47% / 2) - (%44% / 2), %46% - (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+if[%param3% = front | %param3% = Front] CreateWallBox2 %52%, DecoRight, %40%, %45% + (%47% / 2) + (%44% / 2), %46% - (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Back Facing Decos
+if[%param3% = back | %param3% = Back] CreateWallBox2 %52%, DecoTop, %41%, %45%, %46% + (%43% / 2), %47%, %43%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[%param3% = back | %param3% = Back] CreateWallBox2 %52%, DecoLeft, %40%, %45% - (%47% / 2) - (%44% / 2), %46% + (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+if[%param3% = back | %param3% = Back] CreateWallBox2 %52%, DecoRight, %40%, %45% + (%47% / 2) + (%44% / 2), %46% + (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Left Facing Decos
+if[%param3% = left | %param3% = Left] CreateWallBox2 %52%, DecoTop, %41%, %45% - (%43% / 2), %46%, %43%, %47%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[%param3% = left | %param3% = Left] CreateWallBox2 %52%, DecoLeft, %40%, %45% - (%43% / 2), %46% - (%47% / 2) - (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+if[%param3% = left | %param3% = Left] CreateWallBox2 %52%, DecoRight, %40%, %45% - (%43% / 2), %46% + (%47% / 2) + (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Right Facing Decos
+if[%param3% = right | %param3% = Right] CreateWallBox2 %52%, DecoTop, %41%, %45% + (%43% / 2), %46%, %43%, %47%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[%param3% = right | %param3% = Right] CreateWallBox2 %52%, DecoLeft, %40%, %45% + (%43% / 2), %46% - (%47% / 2) - (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+if[%param3% = right | %param3% = Right] CreateWallBox2 %52%, DecoRight, %40%, %45% + (%43% / 2), %46% + (%47% / 2) + (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Filler Walls
+if[%param3% = left | %param3% = Left | %param3% = right | %param3% = Right] Set 52 = false #Direction of the filler walls
+if[%param3% = front | %param3% = Front | %param3% = back | %param3% = Back] Set 52 = true #Direction of the filler walls
+if[%param3% = left | %param3% = Left | %param3% = front | %param3% = Front] Set 53 = Left #Wall Orientation of the filler walls
+if[%param3% = right | %param3% = Right | %param3% = back | %param3% = Back] Set 53 = Right #Wall Orientation of the filler walls
+Set 54 = %param14% #Texture of the filler walls
+Set 55 = %param15% #Depth of the filler walls
+
+if[%param13% = true | %param13% = True] WallOrientation = %53%
+if[%param13% = true | %param13% = True] AddFillerWalls %54%, %55%, %45%, %46%, %47%, %48%, %51%, %52%, 0, 0
+<EndFunction>

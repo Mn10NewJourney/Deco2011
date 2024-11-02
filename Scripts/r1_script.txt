@@ -1,0 +1,75 @@
+#Deco2011
+
+<Function AddDeco>
+#Front Facing Decos
+Set 40 = %param1% #Side Texture
+Set 41 = %param2% #Top Texture
+Set 42 = %param3% #Direction
+Set 43 = %param4% #Thickness
+Set 44 = %param5% #Length of side decos
+Set 45 = %param6% #Center X
+Set 46 = %param7% #Center Z
+Set 47 = %param8% #Door Width
+Set 48 = %param9% #Door Height
+Set 49 = %param10% #Side Deco Height
+Set 50 = %param11% #Top Deco Height
+Set 51 = %param12% #Trim Offset
+
+if[%param3% = front | %param3% = Front] CreateWallBox2 Floor, DecoTop, %41%, %45%, %46% - (%43% / 2), %47%, %43%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[%param3% = front | %param3% = Front] CreateWallBox2 Floor, DecoLeft, %40%, %45% - (%47% / 2) - (%44% / 2), %46% - (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+if[%param3% = front | %param3% = Front] CreateWallBox2 Floor, DecoRight, %40%, %45% + (%47% / 2) + (%44% / 2), %46% - (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+
+#Back Facing Decos
+Set 40 = %param1% #Side Texture
+Set 41 = %param2% #Top Texture
+Set 42 = %param3% #Direction
+Set 43 = %param4% #Thickness
+Set 44 = %param5% #Length of side decos
+Set 45 = %param6% #Center X
+Set 46 = %param7% #Center Z
+Set 47 = %param8% #Door Width
+Set 48 = %param9% #Door Height
+Set 49 = %param10% #Side Deco Height
+Set 50 = %param11% #Top Deco Height
+Set 51 = %param12% #Trim Offset
+
+if[%param3% = back | %param3% = Back] CreateWallBox2 Floor, DecoTop, %41%, %45%, %46% + (%43% / 2), %47%, %43%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[%param3% = back | %param3% = Back] CreateWallBox2 Floor, DecoLeft, %40%, %45% - (%47% / 2) - (%44% / 2), %46% + (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+if[%param3% = back | %param3% = Back] CreateWallBox2 Floor, DecoRight, %40%, %45% + (%47% / 2) + (%44% / 2), %46% + (%43% / 2), %44%, %43%, %49%, %51%, 0, 0, false, true, true, true
+
+#Left Facing Decos
+Set 40 = %param1% #Side Texture
+Set 41 = %param2% #Top Texture
+Set 42 = %param3% #Direction
+Set 43 = %param4% #Thickness
+Set 44 = %param5% #Length of side decos
+Set 45 = %param6% #Center X
+Set 46 = %param7% #Center Z
+Set 47 = %param8% #Door Width
+Set 48 = %param9% #Door Height
+Set 49 = %param10% #Side Deco Height
+Set 50 = %param11% #Top Deco Height
+Set 51 = %param12% #Trim Offset
+
+if[%param3% = left | %param3% = Left] CreateWallBox2 Floor, DecoTop, %41%, %45% - (%43% / 2), %46%, %43%, %47%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[%param3% = left | %param3% = Left] CreateWallBox2 Floor, DecoLeft, %40%, %45% - (%43% / 2), %46% - (%47% / 2) - (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+if[%param3% = left | %param3% = Left] CreateWallBox2 Floor, DecoRight, %40%, %45% - (%43% / 2), %46% + (%47% / 2) + (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+
+#Right Facing Decos
+Set 40 = %param1% #Side Texture
+Set 41 = %param2% #Top Texture
+Set 42 = %param3% #Direction
+Set 43 = %param4% #Thickness
+Set 44 = %param5% #Length of side decos
+Set 45 = %param6% #Center X
+Set 46 = %param7% #Center Z
+Set 47 = %param8% #Door Width
+Set 48 = %param9% #Door Height
+Set 49 = %param10% #Side Deco Height
+Set 50 = %param11% #Top Deco Height
+Set 51 = %param12% #Trim Offset
+
+if[%param3% = right | %param3% = Right] CreateWallBox2 Floor, DecoTop, %41%, %45% + (%43% / 2), %46%, %43%, %47%, %50%, %48% + %51%, 0, 0, false, true, true, true
+if[%param3% = right | %param3% = Right] CreateWallBox2 Floor, DecoLeft, %40%, %45% + (%43% / 2), %46% - (%47% / 2) - (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+if[%param3% = right | %param3% = Right] CreateWallBox2 Floor, DecoRight, %40%, %45% + (%43% / 2), %46% + (%47% / 2) + (%44% / 2), %43%, %44%, %49%, %51%, 0, 0, false, true, true, true
+<EndFunction>

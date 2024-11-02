@@ -1,0 +1,13 @@
+#Manual Filler Walls for Older Scripts
+
+<Function AddDecoFillerWalls>
+if[%param2% = left | %param2% = Left | %param2% = right | %param2% = Right] Set 56 = false #Direction of the filler walls
+if[%param2% = front | %param2% = Front | %param2% = back | %param2% = Back] Set 56 = true #Direction of the filler walls
+if[%param2% = left | %param2% = Left | %param2% = front | %param2% = Front] Set 57 = Left #Wall Orientation of the filler walls
+if[%%param2% = right | %param2% = Right | %param2% = back | %param2% = Back] Set 57 = Right #Wall Orientation of the filler walls
+Set 58 = %param1% #Texture of the filler walls
+Set 59 = %param3% #Depth of the filler walls
+
+WallOrientation = %57%
+AddFillerWalls %58%, %59%, %45%, %46%, %47%, %48%, %51%, %56%, 0, 0
+<EndFunction>
